@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Sathyanesh Krishnan">
+
+    <title>Simple API Test</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="highlight/styles/default.css">
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
+
+    <script type="text/javascript" src="highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+
+    <!-- jQuery first, then Bootstrap JS. -->
+    <script type="text/javascript" src="lib/jquery/jquery.js"></script>
+    <script type="text/javascript" src="lib/popper/popper.js"></script>
+    <script type="text/javascript" src="lib/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/MyAjaxLib.js"></script>
+
+
+
+    <div class="container-fluid">
+        <h1 class="title text-info">Simple API Test</h1>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="alert alert-success" role="alert" id="MyErrorText">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-sm-6 col-lg-6">
+                <h5 class="text-success">Select</h5>
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <button class="btn btn-success"
+                        data-toggle="tooltip" data-placement="top"  title="get all or specific record"
+                        type="button" onclick="DemoObj.TrySimpleGet();">Get</button>
+                    </span>
+                    <input type="text" id="MyGetUri" class="form-control" placeholder="Enter the URI for GET" value="/v1/product">
+                </div>
+
+                </br>
+
+                <h5 class="text-primary">Insert</h5>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button type="button"  id="Action1" class="btn btn-primary" onclick="DemoObj.TryAnyAction();">
+                            POST
+                        </button>
+
+                        <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+
+                        <div class="dropdown-menu MyActionSelectList">
+                            <a class="dropdown-item" href="#">POST</a>
+                            <a class="dropdown-item" href="#">PUT</a>
+                            <a class="dropdown-item" href="#">DELETE</a>
+                            <div role="separator" class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">PATCH</a>
+                        </div>
+                    </div>
+
+                    <input type="text"  id="MyActionUri" class="form-control" aria-label="Text input with segmented dropdown button"
+                        placeholder="Enter the URI for the selected action" value="/v1/product">
+                </div>
+
+                <div>
+                    <textarea placeholder="Enter your JSON input here..." class="form-control" id="MyInputTextarea" rows="10">
+                    </textarea>
+                </div>
+                </br>
+            </div>
+
+            <div class="col-sm-6 col-lg-6 offset-lg-0">
+                <div class="card">
+                    <div class="card-header text-white bg-info">
+                        API Result
+                    </div>
+                    <div class="card-block">
+                        <pre><code class="json" id="MyJsonResult"></code></pre>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+        // Initialize tooltip component
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+
+        // Initialize popover component
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+        })
+    </script>
+
+</body>
+
+</html>
