@@ -18,8 +18,8 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
-          timeout: 600             # Optional but helpful
-          command_timeout: 600     # Extend run timeout to 10 minutes
+          timeout: 600s             # ✅ Add "s" to specify seconds
+          command_timeout: 600s     # ✅ Add "s" to specify seconds
           script: |
             echo "🔁 Pulling latest code..."
             cd nginx-docker
