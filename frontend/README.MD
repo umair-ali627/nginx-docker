@@ -1,4 +1,4 @@
-Static Website Example
+Static Website Example 222
 ----------------------
 
 To be used with Cloud Academy labs.
