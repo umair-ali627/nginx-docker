@@ -9,13 +9,13 @@ services:
     build: ./nodeapp
     container_name: nodeapp
     ports:
-      - "8787:8787"
+      - "8788:8787"   # Host 8788 → Container 8787
 
   pythonapp:
     build: ./pythonapp
     container_name: pythonapp
     ports:
-      - "8888:8888"
+      - "8889:8888"   # Host 8889 → Container 8888
 
   nginx:
     image: nginx:alpine
@@ -31,3 +31,4 @@ services:
       - frontend
       - nodeapp
       - pythonapp
+
